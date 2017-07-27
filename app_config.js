@@ -27,8 +27,9 @@ require('./models/user');
 require('./models/patrimony');
 require('./models/report')
 require('./models/ticket')
+require('./models/event');
 
-app.listen(process.env.PORT || 8080, function () {
+app.listen(8080, function () {
   console.log('Example app listening on port 8080!');
 });
 

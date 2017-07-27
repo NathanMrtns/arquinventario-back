@@ -16,24 +16,6 @@ router.get('/:searchFilter/:searchField/', function(req,res){
   });
 })
 
-// router.get('/:filterYear', function(req,res){
-//   patrimonyCtrl.getPatrimoniesByYear(req,function(response){
-//     res.json(response);
-//   });
-// })
-
-// router.get('/:filterStyle', function(req,res){
-//   patrimonyCtrl.getPatrimoniesByStyle(req,function(response){
-//     res.json(response);
-//   });
-// })
-
-// router.get('/:filterTipology', function(req,res){
-//   patrimonyCtrl.getPatrimoniesByTipology(req,function(response){
-//     res.json(response);
-//   });
-// })
-
 router.post('/', function(req, res){
   patrimonyCtrl.createPatrimony(req, function(response){
     res.json(response);
@@ -42,6 +24,12 @@ router.post('/', function(req, res){
 
 router.put('/edit/:id', function(req, res){
   patrimonyCtrl.updatePatrimony(req, function(response){
+    res.json(response);
+  });
+});
+
+router.put('/addInformation/:id', function(req, res){
+  patrimonyCtrl.addAdditionalInformations(req, function(response){
     res.json(response);
   });
 });
