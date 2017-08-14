@@ -27,7 +27,7 @@ var patrimonySchema = new mongoose.Schema({
     type:[String]
   },
   imagePath:{
-    type: String
+    type:String
   }
 },{collection:'patrimony'});
 

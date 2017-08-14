@@ -26,7 +26,8 @@ exports.createTicket = function(req, callback){
     title : req.body.title,
     description : req.body.description,
     address: req.body.address,
-    status: "pending"
+    status: "pending",
+    imagePath: req.body.imagePath
   });
 
   ticket.save(function(err){
@@ -36,9 +37,10 @@ exports.createTicket = function(req, callback){
 };
 
 exports.acceptTicket = function(req, callback){
+  console.log(req.params.id);
   Ticket.findOne({_id:req.params.id}, function(error, ticket){
       if(error){
-        res.json({error:'Ticket não encontrado!'});
+        callback({error:'Ticket não encontrado!'});
       }else{
         ticket.status = "accepted"
         ticket.save(function(err, ticket){
