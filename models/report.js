@@ -5,6 +5,9 @@ var reportSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  status: {
+    type: String
+  },
   description: {
     type:String,
     required: true,
@@ -12,6 +15,9 @@ var reportSchema = new mongoose.Schema({
   address : {
     type:String,
     required:true
+  },
+  imagePath:{
+    type:String
   }
 },{collection:'report'});
 
